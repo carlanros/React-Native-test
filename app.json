@@ -1,0 +1,8 @@
+{
+  "expo": {
+    "sdkVersion": "25.0.0",
+    "primaryColor": "#ff00",
+    "name": "Third",
+    "icon": "./resources/home-icon.png"
+  }
+}
