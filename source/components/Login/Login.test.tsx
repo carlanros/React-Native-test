@@ -34,8 +34,8 @@ describe('components', () => {
       expect(enzymeWrapper).toMatchSnapshot();
 
       // Test Login
-      const textInput2 = enzymeWrapper.find(TextInput).at(0).props();
-      expect(textInput2.placeholder).toBe('Username');
+      const textInput2 = enzymeWrapper.find(TextInput).at(1).props();
+      expect(textInput2.placeholder).toBe('Password');
     });
   });
 });

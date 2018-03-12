@@ -1,11 +1,11 @@
 import React,{ Component } from 'react';
 import { View } from 'react-native';
-import Main from './dist/components/navigator';
+import AppContiner from './dist/App';
 
 
 
 const App = () => {
-  return (<Main />);
+  return (<AppContiner />);
 }
 
 export default App;
