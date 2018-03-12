@@ -2,7 +2,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Main from './';
+import Main from './'; // här
+import Progress from '../Progress'; // upp 1 nivå
 
 function setup() {
   const props = {
@@ -29,6 +30,9 @@ describe('components', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
+      // Test Progress
+      const progress = enzymeWrapper.find(Progress).props();
+      expect(progress.amount).toBe(0);
     });
   });
 });

@@ -1,8 +1,11 @@
 /// <reference types="jest"/>
 import React from 'react';
+import {TextInput} from 'react-native';
 import { shallow } from 'enzyme';
 
-import Main from './';
+import Login from '../Login';
+
+jest.unmock('react-native');
 
 function setup() {
   const props = {
@@ -10,7 +13,7 @@ function setup() {
 // typ userName: 'test'
   };
 
-  const enzymeWrapper = shallow(<Main {...props} /> );
+  const enzymeWrapper = shallow(<Login {...props} /> );
 
   return {
     props,
@@ -25,10 +28,14 @@ describe('components', () => {
    *    const busyProps = enzymeWrapper.find(Text).props();
    *    expect(busyProps.text).toBe('test);
    */
-  describe('Main', () => {
+  describe('Login', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
+
+      // Test Login
+      const textInput2 = enzymeWrapper.find(TextInput).at(0).props();
+      expect(textInput2.placeholder).toBe('Username');
     });
   });
 });
