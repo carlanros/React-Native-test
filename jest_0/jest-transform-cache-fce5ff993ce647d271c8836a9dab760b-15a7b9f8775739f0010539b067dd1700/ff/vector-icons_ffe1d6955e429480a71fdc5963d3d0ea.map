@@ -1,0 +1,1 @@
+{"version":3,"sources":["vector-icons.js"],"names":["jest","mock","FontAwesome"],"mappings":"AACAA,KAAKC,IAAL,sBAAgC,iBAAO,CACrCC,YAAa,MADwB,CAAP,EAAhC","file":"vector-icons.js","sourcesContent":["\njest.mock('@expo/vector-icons', () => ({\n  FontAwesome: 'Text',\n}));\n\n"]}

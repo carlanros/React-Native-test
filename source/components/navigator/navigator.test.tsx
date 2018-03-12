@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Main from './';
+import Navigator from '../navigator';
 
 function setup() {
   const props = {
@@ -10,7 +10,7 @@ function setup() {
 // typ userName: 'test'
   };
 
-  const enzymeWrapper = shallow(<Main {...props} /> );
+  const enzymeWrapper = shallow(<Navigator {...props} /> );
 
   return {
     props,
@@ -25,7 +25,7 @@ describe('components', () => {
    *    const busyProps = enzymeWrapper.find(Text).props();
    *    expect(busyProps.text).toBe('test);
    */
-  describe('Main', () => {
+  describe('Navigator', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
