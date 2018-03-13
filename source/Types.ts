@@ -1,3 +1,6 @@
+
+import * as login from './components/Login/types';
+
 /**
  * All possible objects in Redux store
  *
@@ -5,6 +8,7 @@
  * @interface IApplicationState
  */
 export interface IApplicationState {
+    login?: login.ILoginAction;
 
 }
 
@@ -17,4 +21,6 @@ export interface IApplicationState {
  * @interface IProps
  */
 export interface IProps extends IApplicationState {
+    dispatch?: any;
+    FacebookLogin: login.FacebookLogin;
 }
