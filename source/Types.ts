@@ -9,7 +9,6 @@ import * as login from './components/Login/types';
  */
 export interface IApplicationState {
     login?: login.ILoginAction;
-
 }
 
 /**
@@ -22,5 +21,5 @@ export interface IApplicationState {
  */
 export interface IProps extends IApplicationState {
     dispatch?: any;
-    FacebookLogin: login.FacebookLogin;
+    FacebookLogin?: login.FacebookLogin;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import {TextInput} from 'react-native';
 import { shallow } from 'enzyme';
 
-import Login from '../Login';
+import {Login} from '../Login';
 
 jest.unmock('react-native');
 
