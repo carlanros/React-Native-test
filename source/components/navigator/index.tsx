@@ -3,8 +3,8 @@ import { Platform } from 'react-native';
 import { Scene, Router, Reducer, Modal, Tabs } from 'react-native-router-flux';
 import Main from '../Main';
 import Login from '../Login';
-import {FontAwesome} from '@expo/vector-icons';
-    // @ts-ignore - bad mappings
+import { FontAwesome } from '@expo/vector-icons';
+
 const mainIcon = () => (
     <FontAwesome name='map-o' size={12} style={{color: 'white'}} />
 
