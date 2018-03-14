@@ -1,6 +1,7 @@
 import configureMockStore, { MockStore } from 'redux-mock-store';
 import { Store } from '../../../store';
 import { FacebookLogin } from '../actions';
+import * as loginTypes from '../types';
 
 const storeMock = configureMockStore<Store>();
 
@@ -24,6 +25,19 @@ describe('Facebook actions', () => {
             accessToken: 'fbTokenMock',
             type: 'Facebook',
           };
+          const expectedActions = [ {type: loginTypes.LoginConstants.LOGIN_SUCCESS,
+          payload: expectedPayload,
+            },
+        ];
+        // Dispatch action
+        // @ts-ignore
+        await storeMock.dispatch(FacebookLogin());
+
+        // @ts-ignore
+        expect(storeMock.getActions()).toMatchSnapshot();
+
+        // @ts-ignore
+     expect(storeMock.getActions()).toEqual(expectedActions);
       });
 
 });

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Facebook actions FacebookLogin returns Success when done 1`] = `
+Array [
+  Object {
+    "payload": User {
+      "accessToken": "fbTokenMock",
+      "name": "test",
+      "picture": null,
+      "type": "Facebook",
+    },
+    "type": "LOGIN_SUCCESS",
+  },
+]
+`;
