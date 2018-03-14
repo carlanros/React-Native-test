@@ -2,16 +2,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Main from './'; // här
-import Progress from '../Progress'; // upp 1 nivå
+import { Main }from './'; // här
+import * as types from '../../Types';
+import  Progress  from '../Progress'; // upp 1 nivå
+
+jest.unmock('react-native');
 
 function setup() {
-  const props = {
-// Här kan ni mocka komponentens props om sådana finns
-// typ userName: 'test'
+  const props: types.IProps = {
+    login: {
+      user: null,
+      isLoggedIn: false,
+    },
+
   };
 
-const enzymeWrapper = shallow(<Main {...props} /> );
+  const enzymeWrapper = shallow(<Main {...props} /> );
 
   return {
     props,

@@ -31,7 +31,7 @@ describe('Facebook actions', () => {
         ];
         // Dispatch action
         // @ts-ignore
-        await storeMock.dispatch(FacebookLogin());w
+        await storeMock.dispatch(FacebookLogin());
 
         // @ts-ignore
         expect(storeMock.getActions()).toMatchSnapshot();

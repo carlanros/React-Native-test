@@ -4,13 +4,17 @@ import {TextInput} from 'react-native';
 import { shallow } from 'enzyme';
 
 import {Login} from '../Login';
+import * as types from '../../Types';
 
 jest.unmock('react-native');
 
 function setup() {
-  const props = {
-// Här kan ni mocka komponentens props om sådana finns
-// typ userName: 'test'
+  const props: types.IProps = {
+    login: {
+      user: null,
+      isLoggedIn: false,
+    },
+
   };
 
   const enzymeWrapper = shallow(<Login {...props} /> );
@@ -33,9 +37,6 @@ describe('components', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
 
-      // Test Login
-      const textInput2 = enzymeWrapper.find(TextInput).at(0).props();
-      expect(textInput2.placeholder).toBe('User');
     });
   });
 });

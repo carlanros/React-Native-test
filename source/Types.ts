@@ -8,7 +8,7 @@ import * as login from './components/Login/types';
  * @interface IApplicationState
  */
 export interface IApplicationState {
-    login?: login.ILoginAction;
+    login?: login.ILoginState;
 }
 
 /**
