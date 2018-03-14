@@ -2,12 +2,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Navigator from '../navigator';
+import { Navigator } from '../navigator';
+import * as types from '../../Types';
+
+jest.unmock('react-native');
 
 function setup() {
-  const props = {
-// Här kan ni mocka komponentens props om sådana finns
-// typ userName: 'test'
+  const props: types.IProps = {
+    login: {
+      user: null,
+      isLoggedIn: false,
+    },
+
   };
 
   const enzymeWrapper = shallow(<Navigator {...props} /> );
