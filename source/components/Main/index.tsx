@@ -3,6 +3,12 @@ import { Text, View, Image, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Progress from '../Progress';
 import Login from '../Login';
+import { Login } from '../Login/index';
+import { Actions } from 'react-native-router-flux';
+import { connect, Dispatch} from 'react-redux';
+import * as types from '../../Types';
+import { FacebookLogin } from '../Login/actions';
+import { bindActionCreators }from 'redux';
 
 interface IState {
     isLoaded: boolean;
@@ -10,7 +16,7 @@ interface IState {
     amount: number;
 }
 
-export default class App extends React.Component<{}, IState> {
+export  class Main extends React.Component<types.IProps, IState> {
 constructor(props: any ) {
 
   super(props);
@@ -19,7 +25,9 @@ constructor(props: any ) {
   }
 
 componentDidMount() {
+if (!this.props.login.isLoggedIn) {
   Actions.push('login');
+  }
 }
 
 onTextChanged(name: string) {
@@ -42,3 +50,18 @@ onTextChanged(name: string) {
     );
   }
 }
+const mapStateToProps = (state: types.IApplicationState) => ({
+  // route: state.route,
+  login: state.login,
+ });
+
+ const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({
+  dispatch,
+  FacebookLogin: bindActionCreators(FacebookLogin, dispatch),
+
+});
+
+export default connect<types.IApplicationState, types.IProps>(
+  mapStateToProps,
+  mapDispatchToProps
+  )(Main);
