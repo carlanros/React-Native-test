@@ -31,13 +31,13 @@ describe('Facebook actions', () => {
         ];
         // Dispatch action
         // @ts-ignore
-        await storeMock.dispatch(FacebookLogin());
+        await storeMock.dispatch(FacebookLogin());w
 
         // @ts-ignore
         expect(storeMock.getActions()).toMatchSnapshot();
 
         // @ts-ignore
-     expect(storeMock.getActions()).toEqual(expectedActions);
+        expect(storeMock.getActions()).toEqual(expectedActions);
       });
 
 });
