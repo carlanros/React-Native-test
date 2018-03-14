@@ -2,24 +2,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Navigator } from '../navigator';
+import Navigator from './index';
 import * as types from '../../Types';
 
 jest.unmock('react-native');
 
 function setup() {
-  const props: types.IProps = {
-    login: {
-      user: null,
-      isLoggedIn: false,
-    },
 
-  };
-
-  const enzymeWrapper = shallow(<Navigator {...props} /> );
+  const enzymeWrapper = shallow(<Navigator /> );
 
   return {
-    props,
     enzymeWrapper,
   };
 }
