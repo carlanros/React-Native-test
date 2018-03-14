@@ -12,10 +12,10 @@ describe('Facebook actions', () => {
      });
       test('FacebookLogin returns Success when done', async () => {
           const expectedReply = {
-              name: 'MockName',
+              name: 'test',
               picture: {
                   data: {
-                      url: 'http://mockImageUrl/',
+                      url: null,
                   },
               },
           };
