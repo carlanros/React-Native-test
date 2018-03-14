@@ -4,7 +4,7 @@ import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect, Dispatch} from 'react-redux';
 import * as types from '../../Types';
-import { FacebookLogin } from './actions';
+// import { FacebookLogin } from './actions';
 import { bindActionCreators }from 'redux';
 import { SocialIcon } from 'react-native-elements';
 import { FacebookLogin } from './actions/index';
