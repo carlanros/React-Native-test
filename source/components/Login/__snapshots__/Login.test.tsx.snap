@@ -32,6 +32,9 @@ ShallowWrapper {
           type="facebook"
         />,
       ],
+      "style": Object {
+        "padding": 40,
+      },
     },
     "ref": null,
     "rendered": Array [
@@ -87,6 +90,9 @@ ShallowWrapper {
             type="facebook"
           />,
         ],
+        "style": Object {
+          "padding": 40,
+        },
       },
       "ref": null,
       "rendered": Array [

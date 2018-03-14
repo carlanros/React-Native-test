@@ -11,7 +11,7 @@ function setup() {
 // typ userName: 'test'
   };
 
-  const enzymeWrapper = shallow(<Main {...props} /> );
+const enzymeWrapper = shallow(<Main {...props} /> );
 
   return {
     props,

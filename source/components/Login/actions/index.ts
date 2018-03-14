@@ -1,3 +1,4 @@
+// login/actions/index
 import * as types from '../types';
 import * as Redux from 'redux';
 import { Constants, Facebook } from 'expo';

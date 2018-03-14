@@ -1,3 +1,4 @@
+// login/index
 import React from  'react';
 import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
@@ -11,7 +12,7 @@ import { FacebookLogin } from './actions/index';
 export class Login extends React.Component<types.IProps, {}> {
     render() {
         return (
-            <View>
+            <View style={{padding: 40}}>
                 <Text>Login</Text>
                 <SocialIcon
                     title='Sign In With Facebook'
