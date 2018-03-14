@@ -5,26 +5,31 @@ import { connect, Dispatch} from 'react-redux';
 import * as types from '../../Types';
 import { FacebookLogin } from './actions';
 import { bindActionCreators }from 'redux';
+import { SocialIcon } from 'react-native-elements';
+import { FacebookLogin } from './actions/index';
 
-export class Login extends React.Component<{}, {}> {
+export class Login extends React.Component<types.IProps, {}> {
     render() {
         return (
-            <View style={{padding: 30, flex: 1}}>
-                    <Text>Login</Text>
-                    <TextInput
-                        style={{width: 200}}
-                        placeholder='Username'
-                        autoFocus
-                        keyboardType='email-address' />
-                    <TextInput
-                        style={{width: 200}}
-                        placeholder='Password'
-                        secureTextEntry
-                        onChangeText={(name) => this.onTextChanged(name)} />
-                </View>
-        );
+            <View>
+                <Text>Login</Text>
+                <SocialIcon
+                    title='Sign In With Facebook'
+                    button
+                    onPress={this.facebookLogin}
+                    type='facebook'
+                    />
+            </View>
+       );
     }
-    onTextChanged = (text: string) => {
+facebookLogin = async () => {
+    await this.props.FacebookLogin();
+    if (this.props.login.isLoggedIn) {
+        Actions.pop();
+    }
+}
+
+onTextChanged = (text: string) => {
         this.userName = text;
         if (text && text.length > 5) { Actions.pop(); }
     }
