@@ -1,0 +1,57 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _jsxFileName = "/Users/carlanros/React-Native-test/dist/AppContiner.js";
+
+  var _react = require(_dependencyMap[0], "react");
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _reactRedux = require(_dependencyMap[1], "react-redux");
+
+  var _react3 = require(_dependencyMap[2], "redux-persist/integration/react");
+
+  var _store = require(_dependencyMap[3], "./store");
+
+  var _store2 = _interopRequireDefault(_store);
+
+  var _navigator = require(_dependencyMap[4], "./components/navigator");
+
+  var _navigator2 = _interopRequireDefault(_navigator);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var persistor = _store.configurePersistStore;
+
+  var AppContainer = function AppContainer() {
+    return _react2.default.createElement(
+      _reactRedux.Provider,
+      {
+        store: _store2.default,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        }
+      },
+      _react2.default.createElement(
+        _react3.PersistGate,
+        {
+          persistor: persistor,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 8
+          }
+        },
+        _react2.default.createElement(_navigator2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 9
+          }
+        })
+      )
+    );
+  };
+
+  exports.default = AppContainer;
+});

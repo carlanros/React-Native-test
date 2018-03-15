@@ -1,0 +1,46 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    var _jsxFileName = "/Users/carlanros/React-Native-test/dist/components/Progress/index.js";
+
+    var _react = require(_dependencyMap[0], "react");
+
+    var React = _interopRequireWildcard(_react);
+
+    var _reactNative = require(_dependencyMap[1], "react-native");
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+    var Progress = function Progress(_ref) {
+        var amount = _ref.amount;
+        return React.createElement(
+            _reactNative.View,
+            {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 4
+                }
+            },
+            React.createElement(
+                _reactNative.Text,
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 5
+                    }
+                },
+                "Progress: ",
+                amount
+            ),
+            React.createElement(_reactNative.ActivityIndicator, {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 6
+                }
+            })
+        );
+    };
+
+    exports.default = Progress;
+});

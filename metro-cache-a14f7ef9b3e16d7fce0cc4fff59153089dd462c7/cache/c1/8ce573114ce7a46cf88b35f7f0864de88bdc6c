@@ -1,0 +1,163 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Main = undefined;
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/carlanros/React-Native-test/dist/components/Main/index.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = require(_dependencyMap[2], "react-native");
+
+    var _reactNativeRouterFlux = require(_dependencyMap[3], "react-native-router-flux");
+
+    var _Progress = require(_dependencyMap[4], "../Progress");
+
+    var _Progress2 = _interopRequireDefault(_Progress);
+
+    var _reactRedux = require(_dependencyMap[5], "react-redux");
+
+    var _actions = require(_dependencyMap[6], "../Login/actions");
+
+    var _redux = require(_dependencyMap[7], "redux");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        Main: {
+            displayName: "Main"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/carlanros/React-Native-test/dist/components/Main/index.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var Main = exports.Main = _wrapComponent("Main")(function (_React$Component) {
+        _inherits(Main, _React$Component);
+
+        function Main(props) {
+            _classCallCheck(this, Main);
+
+            var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+
+            _this.state = {
+                userName: '',
+                isLoaded: false,
+                amount: 0
+            };
+            return _this;
+        }
+
+        _createClass(Main, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                if (!this.props.login.isLoggedIn) {
+                    _reactNativeRouterFlux.Actions.push('login');
+                }
+            }
+        }, {
+            key: "onTextChanged",
+            value: function onTextChanged(name) {
+                this.setState({
+                    userName: name,
+                    amount: this.state.amount + 1
+                });
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                var _this2 = this;
+
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: {
+                            padding: 20
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 22
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            style: {
+                                padding: 10,
+                                fontSize: 40
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 24
+                            }
+                        },
+                        'Welcome' + ' ' + this.state.userName
+                    ),
+                    _react3.default.createElement(_reactNative.TextInput, {
+                        style: {
+                            height: 40,
+                            fontSize: 40
+                        },
+                        placeholder: "Type name",
+                        onChangeText: function onChangeText(name) {
+                            return _this2.onTextChanged(name);
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 26
+                        }
+                    }),
+                    _react3.default.createElement(_Progress2.default, {
+                        amount: this.state.amount,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 27
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return Main;
+    }(_react3.default.Component));
+
+    var mapStateToProps = function mapStateToProps(state) {
+        return {
+            login: state.login
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+        return {
+            dispatch: dispatch,
+            FacebookLogin: (0, _redux.bindActionCreators)(_actions.FacebookLogin, dispatch)
+        };
+    };
+
+    exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Main);
+});

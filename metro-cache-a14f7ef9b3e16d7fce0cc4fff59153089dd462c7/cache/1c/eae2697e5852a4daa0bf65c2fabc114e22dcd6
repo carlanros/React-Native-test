@@ -1,0 +1,33 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.configurePersistStore = undefined;
+
+  var _redux = require(_dependencyMap[0], "redux");
+
+  var _reduxPersist = require(_dependencyMap[1], "redux-persist");
+
+  var _reduxPromise = require(_dependencyMap[2], "redux-promise");
+
+  var _reduxPromise2 = _interopRequireDefault(_reduxPromise);
+
+  var _reduxLogger = require(_dependencyMap[3], "redux-logger");
+
+  var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
+
+  var _reduxThunk = require(_dependencyMap[4], "redux-thunk");
+
+  var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+  var _rootreducer = require(_dependencyMap[5], "./rootreducer");
+
+  var _rootreducer2 = _interopRequireDefault(_rootreducer);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var middleware = (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxPromise2.default, _reduxLogger2.default);
+  var Store = (0, _redux.createStore)(_rootreducer2.default, (0, _redux.compose)(middleware));
+  var configurePersistStore = exports.configurePersistStore = (0, _reduxPersist.persistStore)(Store);
+  exports.default = Store;
+});

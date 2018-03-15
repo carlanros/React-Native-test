@@ -1,0 +1,27 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    var LoginConstants = exports.LoginConstants = undefined;
+
+    (function (LoginConstants) {
+        LoginConstants["LOGIN_FAILED"] = "LOGIN_FAILED";
+        LoginConstants["LOGIN_SUCCESS"] = "LOGIN_SUCCESS";
+        LoginConstants["LOGIN_BUSY"] = "Kollar vem du \xE4r";
+    })(LoginConstants || (exports.LoginConstants = LoginConstants = {}));
+
+    var User = exports.User = function User(accessToken, name) {
+        var picture = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+        var type = arguments[3];
+
+        _classCallCheck(this, User);
+
+        this.accessToken = accessToken;
+        this.name = name;
+        this.picture = picture;
+        this.type = type;
+    };
+});
